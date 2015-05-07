@@ -15,7 +15,8 @@ var AppModel = Backbone.Model.extend({
     getting called from the window (unless we override it, as we do here). */
 
     params.library.on('queue',function(song){
-      this.set('songQueue', song);
+
+      this.get('songQueue').enqueue(song);
     }, this);
 
 
